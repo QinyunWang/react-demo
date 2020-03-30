@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.less';
 import { Layout } from 'antd';
+import InputGroup from './components/InputGroup'
 
 
 const { Header, Footer, Content } = Layout;
@@ -13,7 +14,9 @@ function App() {
         <Header className='header'>
           Qinyun Wang
         </Header>
-        <Content></Content>
+        <Content>
+          <InputGroup />
+        </Content>
         <Footer></Footer>
       </Layout>
     </div>
