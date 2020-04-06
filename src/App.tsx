@@ -15,7 +15,9 @@ function App() {
           Qinyun Wang
         </Header>
         <Content>
-          <View />
+          <div id="container">
+            <View />
+          </div>
         </Content>
         <Footer></Footer>
       </Layout>
