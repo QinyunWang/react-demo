@@ -20,7 +20,7 @@ const InputGroup = () => {
       });
 
     return (
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name</label>
             <input
                 id="firstName"
