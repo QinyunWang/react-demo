@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.less';
 import { Layout } from 'antd';
-import InputGroup from './components/InputGroup'
+import View from './container/BioInput/index'
 
 
 const { Header, Footer, Content } = Layout;
@@ -15,12 +15,12 @@ function App() {
           Qinyun Wang
         </Header>
         <Content>
-          <InputGroup />
+          <View />
         </Content>
         <Footer></Footer>
       </Layout>
     </div>
-  );
+  )
 }
 
 export default App;
