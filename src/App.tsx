@@ -2,6 +2,7 @@ import React from 'react';
 import './App.less';
 import { Layout } from 'antd';
 import View from './container/BioInput/index'
+import BioInput from './components/InputGroup'
 
 
 const { Header, Footer, Content } = Layout;
@@ -16,7 +17,7 @@ function App() {
         </Header>
         <Content>
           <div id="container">
-            <View />
+            <BioInput />
           </div>
         </Content>
         <Footer></Footer>
