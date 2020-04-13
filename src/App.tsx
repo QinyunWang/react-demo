@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.less';
 import { Layout } from 'antd';
-import View from './container/BioInput/index'
-import BioInput from './components/InputGroup'
+import BioInput from './container/BioInput/InputGroup'
 
 
 const { Header, Footer, Content } = Layout;

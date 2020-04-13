@@ -12,6 +12,14 @@ type Information = {
     state: string
 }
 
+type stateCountry = {
+  name: string
+  state: string[]
+}
+
+const stateOfCountry: stateCountry[] = [{ name:'australia', state: ['NSW', 'QLD', 'VIC'] }, { name:'america', state: ['NY', 'NJ', 'CA']}]
+let stateOptions: object[] = []
+
 const options: object[] = [];
 const techStack = ["Java", "C", "C++", "Python", "PHP", "Object-C", "SQL"];
 for (let i=0; i<techStack.length; i++) {
@@ -20,7 +28,7 @@ for (let i=0; i<techStack.length; i++) {
 
 const InputGroup = () => {
 
-  const { values, handleChange, handleSubmit } = useFormik<Information>({
+  const { values, handleChange, handleSubmit, setFieldValue } = useFormik<Information>({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -88,12 +96,39 @@ const InputGroup = () => {
         <select
           name="techStack"
           multiple={true}
-          value={techStack}
+          value={values.techStack}
           onChange={handleChange}
         >
           {options}
         </select>
       </div>
+      <label htmlFor="country">Country</label>
+      <select
+        name="country"
+        placeholder="Please select"
+        onChange={event => {
+          setFieldValue("country", event.target.value)
+          stateOptions = [];
+          stateOfCountry.map(item => {
+            if (event.target.value === item.name) {
+              item.state.map((state, index) => stateOptions.push(<option key={index} value={state}>{state}</option>)
+              )
+            }
+          })
+        }}
+        value={values.country}
+      >
+        <option value="australia">Australia</option>
+        <option value="america">America</option>
+      </select>
+      <label htmlFor="state">State</label>
+      <select
+        name="state"
+        value={values.state}
+        onChange={handleChange}
+      >
+        {stateOptions}
+      </select>
       <Button 
         type="primary"
         htmlType="submit"
